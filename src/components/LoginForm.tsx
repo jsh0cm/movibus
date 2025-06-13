@@ -33,11 +33,30 @@ export default function OrderForm({logo, title, subtitle, button, onSubmit}: Log
         }));
     };
 
-    return (div className="w-full md:w-1/2 lg:w-1/3 mx-auto p-6 bg-white rounded-lg shadow-md">);
-
+    return (
+    <div className="w-full md:w-1/2 lg:w-1/3 mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
+        <img src={logo} alt="Logo" className="w-32 mx-auto mb-4" />
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">MoviBus</h2>
+        <p className="text-gray-600 mb-4">Iniciar Sesión</p>
+        <input
+        type="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        placeholder="Email"
+        className="w-full p-2 border border-gray-300 rounded-md mb-4"
+        />
+        <input
+        type="password"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+        placeholder="Password"
+        className="w-full p-2 border border-gray-300 rounded-md mb-4"
+        />
+        <Button text="Iniciar Sesión" style="bg-bright-sun-500 text-black font-bold font-montserrat py-3 px-6 rounded-full hover:bg-red-500 hover:text-white transition duration-800 cursor-pointer" />
+        <form onSubmit={handleSubmit}> </form>
+        <div className="mb-4"></div>
+    </div>
+    );
 }
-
-
-
-
-
