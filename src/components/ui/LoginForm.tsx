@@ -11,7 +11,7 @@ interface LoginFormProps {
 
 interface LoginFormData {
   email: string;
-    password: string;
+  password: string;
 }
 
 export default function OrderForm({logo, title, subtitle, button, onSubmit}: LoginFormProps) {
@@ -54,7 +54,7 @@ export default function OrderForm({logo, title, subtitle, button, onSubmit}: Log
         placeholder="Password"
         className="w-full p-2 border border-gray-300 rounded-md mb-4"
         />
-        <Button text="Iniciar Sesión" style="bg-bright-sun-500 text-black font-bold font-montserrat py-3 px-6 rounded-full hover:bg-red-500 hover:text-white transition duration-800 cursor-pointer" />
+        {button ? button : ""}
         <form onSubmit={handleSubmit}> </form>
         <div className="mb-4"></div>
     </div>

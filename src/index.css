@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@theme {
+    --color-primary: #43a047;
+    --color-secondary: #f7f8f9;
+    --color-text-one: #525252;
+    --color-text-two: #878787;
+    
+    --font-kanit: 'Kanit', sans-serif;
+
+}
+
