@@ -9,7 +9,7 @@ interface LoginFormProps {
   onSubmit: (formData: LoginFormData) => void;
 }
 
-interface LoginFormData {
+ export interface LoginFormData {
   email: string;
   password: string;
 }
