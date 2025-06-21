@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
 
-interface LoginFormProps {
+export interface LoginFormProps {
   logo: string;
   title: string;
   subtitle: string;
@@ -14,7 +14,7 @@ interface LoginFormProps {
   password: string;
 }
 
-export default function OrderForm({logo, title, subtitle, button, onSubmit}: LoginFormProps) {
+export default function LoginForm({logo, title, subtitle, button, onSubmit}: LoginFormProps) {
   // Creamos un estado para guardar los datos del formulario
   const [formData, setFormData] = useState<LoginFormData>({
     email: "",

@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import LoginForm from "./LoginForm";
 import type { LoginFormData } from "./LoginForm";
 import type { Container } from "react-dom/client";
 
@@ -10,8 +11,7 @@ interface HeaderProps {
 }
 
 interface LoginFormProps {
-  // Define the properties that LoginForm expects
-  // For example:
+  logo: string;
   title: string;
   subtitle: string;
   button?: React.ReactNode;
@@ -28,6 +28,7 @@ export default function Container(props: ContainerProps) {
         <>
             <div className="flex flex-col h-screen">
                 <Header {...props.header}/>
+                {props.loginForm && <LoginForm {...props.loginForm} />}
             </div>
             <div>
 

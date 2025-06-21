@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import Button  from '../components/ui/Button'
 import Container from '../components/ui/Container'
-import type {LoginFormProps} from '../components/ui/LoginForm';
+import type {LoginFormData, LoginFormProps} from '../components/ui/LoginForm';
 
 const btn = (
   <Button
@@ -11,14 +11,12 @@ const btn = (
   />
 )
 
-const headerProps = {
-  logo: ''
-}
 const loginFormProps: LoginFormProps = {
+  logo: '/movibus_logo.svg',
   title: 'MoviBus',
   subtitle: 'Iniciar Sesión',
   button: btn,
-  onSubmit: (formData) => {
+  onSubmit: (formData: LoginFormData) => {
     console.log('Form submitted with data:', formData)
   },
 }
@@ -29,6 +27,6 @@ export const Route = createFileRoute('/')({
 
 function RouteComponent() {
   return (
-    <Container header={headerProps} loginForm={loginFormProps} />
+    <Container loginForm={loginFormProps} />
   )
 }
