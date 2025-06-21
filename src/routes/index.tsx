@@ -7,9 +7,11 @@ import type {LoginFormData, LoginFormProps} from '../components/ui/LoginForm';
 const btn = (
   <Button
     text="INICIAR SESION"
-    style="bg-color-primary "
+    className="bg-green-500 hover:bg-green-600 text-white p-2 w-full rounded-l"
+    to="/home"
   />
-)
+);
+
 
 const loginFormProps: LoginFormProps = {
   logo: '/movibus_logo.svg',
