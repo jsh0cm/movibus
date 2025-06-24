@@ -9,10 +9,40 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TicketRouteImport } from './routes/ticket'
+import { Route as TarjetaRouteImport } from './routes/tarjeta'
+import { Route as MonederoRouteImport } from './routes/monedero'
+import { Route as MapRouteImport } from './routes/map'
+import { Route as HorarioRouteImport } from './routes/horario'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TicketRoute = TicketRouteImport.update({
+  id: '/ticket',
+  path: '/ticket',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TarjetaRoute = TarjetaRouteImport.update({
+  id: '/tarjeta',
+  path: '/tarjeta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MonederoRoute = MonederoRouteImport.update({
+  id: '/monedero',
+  path: '/monedero',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapRoute = MapRouteImport.update({
+  id: '/map',
+  path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HorarioRoute = HorarioRouteImport.update({
+  id: '/horario',
+  path: '/horario',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const HomeRoute = HomeRouteImport.update({
   id: '/home',
   path: '/home',
@@ -33,34 +63,114 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/home': typeof HomeRoute
+  '/horario': typeof HorarioRoute
+  '/map': typeof MapRoute
+  '/monedero': typeof MonederoRoute
+  '/tarjeta': typeof TarjetaRoute
+  '/ticket': typeof TicketRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/home': typeof HomeRoute
+  '/horario': typeof HorarioRoute
+  '/map': typeof MapRoute
+  '/monedero': typeof MonederoRoute
+  '/tarjeta': typeof TarjetaRoute
+  '/ticket': typeof TicketRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/home': typeof HomeRoute
+  '/horario': typeof HorarioRoute
+  '/map': typeof MapRoute
+  '/monedero': typeof MonederoRoute
+  '/tarjeta': typeof TarjetaRoute
+  '/ticket': typeof TicketRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/home'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/home'
+    | '/horario'
+    | '/map'
+    | '/monedero'
+    | '/tarjeta'
+    | '/ticket'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/home'
-  id: '__root__' | '/' | '/about' | '/home'
+  to:
+    | '/'
+    | '/about'
+    | '/home'
+    | '/horario'
+    | '/map'
+    | '/monedero'
+    | '/tarjeta'
+    | '/ticket'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/home'
+    | '/horario'
+    | '/map'
+    | '/monedero'
+    | '/tarjeta'
+    | '/ticket'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   HomeRoute: typeof HomeRoute
+  HorarioRoute: typeof HorarioRoute
+  MapRoute: typeof MapRoute
+  MonederoRoute: typeof MonederoRoute
+  TarjetaRoute: typeof TarjetaRoute
+  TicketRoute: typeof TicketRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/ticket': {
+      id: '/ticket'
+      path: '/ticket'
+      fullPath: '/ticket'
+      preLoaderRoute: typeof TicketRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tarjeta': {
+      id: '/tarjeta'
+      path: '/tarjeta'
+      fullPath: '/tarjeta'
+      preLoaderRoute: typeof TarjetaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/monedero': {
+      id: '/monedero'
+      path: '/monedero'
+      fullPath: '/monedero'
+      preLoaderRoute: typeof MonederoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/map': {
+      id: '/map'
+      path: '/map'
+      fullPath: '/map'
+      preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/horario': {
+      id: '/horario'
+      path: '/horario'
+      fullPath: '/horario'
+      preLoaderRoute: typeof HorarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/home': {
       id: '/home'
       path: '/home'
@@ -89,6 +199,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   HomeRoute: HomeRoute,
+  HorarioRoute: HorarioRoute,
+  MapRoute: MapRoute,
+  MonederoRoute: MonederoRoute,
+  TarjetaRoute: TarjetaRoute,
+  TicketRoute: TicketRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
